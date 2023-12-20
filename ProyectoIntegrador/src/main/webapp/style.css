@@ -1,0 +1,585 @@
+:root{
+    --bgcolor: grey;
+    --texthead: white;
+    --textcolor: white;
+    --imagen: url("./assets/img/hawaii.jpg");
+    --negocioscolor: green;
+    --javacolor:red;
+    --labcolor: blue;
+    --visualcolor: purple;
+    --puzzlecolor: darkgreen;
+    --titlecolor: red;
+    --footercolor: darkslategrey;
+}
+*{
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    & a{
+        color:antiquewhite;
+        text-decoration: none;
+    }
+    & h3{
+        font-size: 20px;
+        padding:.5em 0 .5em 0;
+    }
+   
+}
+
+body{
+    max-width:100%;
+}
+header{
+   
+    display:grid;
+    background-color: var(--bgcolor);    
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 10;
+    
+    & .logo{
+        & img{
+            height:4em;
+            vertical-align: middle;
+
+        }
+        & h1{
+            
+            display:inline-block;
+            vertical-align: middle;
+        }
+       
+       
+    }
+    .navBar{    
+       
+        display:inline-block;
+        color: var(--texthead);
+        font-size: 18px;
+        font-weight: 200;
+        position:fixed;
+        top:1em;
+        right: 5%;
+        padding-bottom: .5em;
+               & a {
+        padding-left:20px;  
+               
+        
+    }
+    
+    
+}
+
+}
+/*defino los títulos de cada seccion*/
+ .seccionTitulo{ 
+    font-size: 1.5em;
+    width:80%;
+      
+    color: var(--titlecolor);
+    text-align: center;
+   margin: 1em auto 2em auto;
+   & h2{
+    text-transform:uppercase;
+}
+/*texto comun a todas las secciones*/
+ }
+ .texto{
+    
+    color: var(--textcolor);  
+    font-weight: 100;
+    
+}
+
+main{
+    
+    width: 100%;    
+   
+}
+
+#imagenPrincipal{
+    
+    
+    position:relative;
+    display:block;
+    padding-top: 12em;
+    margin-bottom:3em;
+    top:4em;
+    max-width:100%;
+    height: 500px;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image:   
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+       var(--imagen);   
+           
+   
+/* botones al final del texto */
+    .texto.principal{
+       padding-right:5%;
+       margin-left: 50%;
+        
+    text-align: right;
+ 
+     }
+   
+
+    .texto.idea,
+    .texto.blog{
+        margin-top: 1em;
+        float: right;
+        border:1px solid;
+        padding: .5em;
+        border-radius: 5px;
+        font-weight: 400;
+        
+    }
+    .texto.idea{
+        border-color: white;
+        margin-right:1em; 
+    }
+    .texto.blog{
+        border-color: black;
+        background-color: green;
+        margin-right:5%; 
+        
+    }
+
+}
+
+/*presento los juegos en cajas con título y descripción el not first of type me permite mantener el titulo fuera del flex*/
+
+#cajaJuegos:not(:first-of-type){
+    width:100%;
+    justify-content: center; 
+    display: flex;
+    flex-flow: row wrap;
+
+   
+}
+#login{
+     position:relative;
+    display:block;
+    padding-top: 5em;
+    margin-bottom:3em;
+    top:4em;
+    max-width:100%;
+    height: 500px;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image: var (--imagen);
+     }  
+ #cajaJuegos img:hover{
+   background-color: red;
+   opacity: 0.8;
+   filter: saturate(7);
+
+}
+.juego{
+       padding:0 30px 0 30px;
+    width:350px;
+    height: auto;
+   
+   
+}
+.vistaJuego{
+        margin-top:5%;
+    display:inline-block;
+    width:100%;
+    height:auto;
+    border-radius:5%;
+    margin-bottom:20px;
+}
+.tituloJuego{
+        position:relative;
+        display:inline-block;
+    
+        
+   
+}
+
+/* administro las etiquetas de los juegos según programación y categoría de juego - la idea de colocar los valores como content es para poder etiquetar directamente desde el class de cada juego sin posibilidad de error en los tags*/
+ .pro, 
+ .cat{
+    
+    color:var(--texthead);
+    padding: .3em;
+    margin-left: .2em;
+    border-radius: 5px;
+    padding-right:10px;
+    font-weight: 400;
+           
+}
+.cajalogos{
+    width:80%;
+       
+}
+.logoPago{	
+	padding:0 20px;
+    width:18%;
+    height: auto;
+   }
+   .logoPago:hover{	
+	padding:0 20px;
+    width:17%;
+    height: auto;
+    opacity:.9;
+    filter:saturate(2.2);
+   }
+.javascript{
+    &::after{
+        content:"javaScript";
+    }
+    background-color: var(--javacolor);
+}
+
+.startups{
+    &::before{
+        content:"startups";
+    }
+    background-color: var(--labcolor);
+}
+.react{
+    &::before{
+        content:"react";
+    }
+    background-color: var(--puzzlecolor);
+}
+.negocios{
+    &::before{
+        content:"negocios"
+    }
+    background-color: var(--negocioscolor)
+}
+
+    /*staff -creo una única clase que contiene una foto y otra que contiene el texto: divStaff
+    en staff invierto la imagen de los bugs. luego invierto los contenidos de divStaff para que la foto y el texto esten en sentido correcto*/
+
+#staff{
+   
+    position:relative;
+    width:100%;
+    display: flex;
+    overflow: hidden;
+   margin-top:2em;
+   
+}
+.divStaff{        
+    max-height: 350px;
+    width:100%;
+    vertical-align:top;
+    color:var(--textcolor);
+    background-color: grey;
+    & img{    
+        margin-top: 0%;
+        width:100%;
+         }
+    & h3{        
+        padding-top:4.5em;
+    }
+    & p, h3{
+        margin-left:auto;
+        margin-right: auto;
+        padding-left: 10%;
+        font-weight: 400;        
+    }
+}
+
+/*seccion ideas : usé el mismo recurso de first of type que en cajajuegos en caso de usar un flex*/
+#ideas:not(:first-of-child){
+   /* border:2px solid black;*/
+    position:relative;
+    width:100%;
+    display: flex;
+    
+}
+.tituloFormulario{        
+    font-weight: 700;
+    margin: 0 auto 2em 5%;   
+    width:50%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    
+}
+ label{    
+   
+    left:0;
+    margin-left: 0;
+    padding-left:0;
+     }
+     
+        
+.formulario{  
+    /*armo dos div donde el primero contiene los dos campos de nombre y email, el segundo solo el textarea*/
+    .lineaFormulario{
+        /*border:2px solid black;*/
+       margin: 1.5em auto;
+       display:flex;
+       /*esta parte es util solo para la primer linea donde debo armar dos campos con un espacio en el medio mediante width 45 en campo y space between en justify content*/
+       flex-direction: row;
+       justify-content: space-between;
+       .elementoFormulario{
+        min-width:33%;
+        
+        
+        
+     }
+       .campo{    
+       font-size: 1.5em;
+       width: 45%;
+       &.entera{
+        width:100%;
+    }
+       
+         }
+       #tuIdea{
+       width: 100%;
+       height:200px;
+       font-size: 1.5em;
+       }
+    
+    }
+    & button{
+        font-size: 1.5em;
+        margin-bottom:2em;
+    }
+   
+}
+
+.tuIdea{
+    padding-top:1.2em;
+    display: block;
+}
+
+.contCat{
+    margin: 100px auto 0;
+    width:100%;
+    justify-content: center; 
+    display: flex;
+    flex-flow: row wrap;
+}
+.contTicket{
+    margin: 80px auto 50px;
+    padding: 5% auto;
+    text-align:center;
+    width:100%;
+    justify-content: center; 
+    display: flex;
+    flex-flow: row wrap;
+}
+.contIntra{
+    margin: 80px auto 50px;
+    padding: 10% auto;
+    text-align:center;
+    width:100%;
+    justify-content: left; 
+    display: flex;
+    flex-flow: row wrap;
+}
+.cuadroCat{
+    margin: 0 5px 0;
+    padding: .5em .5em .5em .5em;
+    & h3, 
+    p{
+        text-align: center;
+    }
+}
+.borderTicket{
+	border: 2px solid grey;
+	padding: 0 auto;
+}
+.cverde{
+    border: 1px solid green;
+}
+.cazul{
+    border: 1px solid blue;
+}
+.crojo{
+    border: 1px solid red;
+}
+.incorrecto{
+    border: 2px dotted red;
+}
+.verdeclaro{
+    padding: 15px auto;
+    background-color: lightgreen;
+}
+/* voy con el footer */
+footer{
+    position: relative;
+    margin-bottom: 10px;
+    background-color: var(--footercolor);
+    color: var(--textcolor);
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    min-height:50px;
+    padding-top: 1em;
+  
+    .footBar{
+       width:80%;
+       padding: 0 auto 0 auto;
+       display:flex;
+       flex-direction: row;
+       justify-content: space-between;
+           & .footItem{
+            text-align: center;
+        margin-left:2em;
+       }
+
+    }
+}
+
+    /*adaptando pantalla...*/
+    
+    @media only screen and (max-width:1100px)
+    {  
+       
+     
+       #imagenPrincipal{
+        max-width:100%;
+        height:250px;
+        /*margin-top:2em;*/
+        padding-bottom: 0;
+        padding-top:8%;
+        background-color: transparent;
+        .texto.principal{
+            
+          
+            padding-right:5%;
+            margin-left: 5%;
+             
+         text-align: right;
+      
+          }
+       }
+        #staff {
+        display:flex;
+        flex-direction: column;
+       
+          
+    }
+    .divStaff{    
+        
+        width: 100%;
+        height: auto;
+       padding: 0 auto 0 auto;
+ 
+        & img{   
+        
+           width:100%;
+           height:auto;
+           margin-left:auto;
+           margin-right:auto;
+         
+        }
+       & p, h3{
+        max-width:80%;       
+            
+          
+            padding: 0 auto 0 auto;
+            
+            
+        }
+        & h3{
+            margin-top: 3%;
+            
+
+        }
+          & p{
+            
+            margin-bottom:10%;
+                
+    }
+
+    }
+    
+        
+             
+   header .logo{
+     
+       text-align: center;
+       
+       background-color: var(--bgcolor);
+       width: 100%;
+      
+        
+    }
+    header .navBar{
+    margin-top:40px; 
+    background-color: var(--bgcolor);   
+    justify-content: center;
+    width:100%;
+    right:0%;
+    
+    }
+   .footBar{
+        flex-direction: column;
+       flex-wrap: wrap;
+       & .footItem{
+    width: 80px;
+       margin:.3em auto .3em auto;
+    }
+    }
+ 
+           }
+           
+           @media only screen and (max-width:500px)    {
+            header .logo .navBar{
+                font-size: 12px;
+            }
+           
+            #imagenPrincipal{
+               
+                height:250px;
+                width: 100%;
+                
+                background-size: auto;
+                
+                margin-bottom:2em;
+                padding-top:12%;
+                font-size: .8em;
+                background-color: transparent;
+               
+                .texto.principal{
+                    
+                  
+                    padding-right:5%;
+                    margin-left: 5%;
+                     
+                 text-align: right;
+              
+                  }
+               }
+           }
+           @media only screen and (max-width:350px) {
+            header .logo{
+                font-size: 13px;;
+            }
+
+            #imagenPrincipal{
+                margin-top: 15%;
+                max-height:300px;
+                font-size: 9px;
+                background-size:auto;
+                
+            }
+           
+           }
+           @media print{
+            header{
+            position:relative;
+            .navBar{
+                margin-top: .8em;
+                font-size: 15px;
+            }
+            }
+           }
+       
+     
